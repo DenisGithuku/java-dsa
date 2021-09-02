@@ -1,13 +1,19 @@
 package com.denisgithuku.adts.linkedlists.basics;
 
-public class SinglyLinkedList {
+public class SinglyLinkedListExample {
 
     public Node head;
     public Node tail;
     public int size;
 
+    public class Node {
+        public int value;
+        public Node next; //hold ref to the next item in series
+    }
+
+
     public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList();
+        SinglyLinkedListExample sll = new SinglyLinkedListExample();
         sll.createSinglyLinkedList(5);
         System.out.println(sll.head.value);
 
