@@ -1,28 +1,27 @@
 package com.denisgithuku.adts.linkedlists.basics;
 
-public class Traversal {
+public class SinglyLinkedListOperations {
     public Node head;
     public Node tail;
     public int size;
 
     public static void main(String[] args) {
-        Traversal traversal = new Traversal();
+        SinglyLinkedListOperations singlyLinkedListOperations = new SinglyLinkedListOperations();
 
-        traversal.insertInLinkedList(5, 0);
-        traversal.insertInLinkedList(6, 1);
-        traversal.insertInLinkedList(7, 2);
-        traversal.insertInLinkedList(8, 3);
-        traversal.insertInLinkedList(9, 4);
-        traversal.insertInLinkedList(10, 5);
-        traversal.insertInLinkedList(11, 0);
-//        System.out.println(traversal.head.value);
-//        System.out.println(traversal.head.next.value);
-//        System.out.println(traversal.head.next.next.value);
-        traversal.traverseSinglyLinkedList();
-        traversal.searchNode(7);
+        singlyLinkedListOperations.insertInLinkedList(5, 0);
+        singlyLinkedListOperations.insertInLinkedList(6, 1);
+        singlyLinkedListOperations.insertInLinkedList(7, 2);
+        singlyLinkedListOperations.insertInLinkedList(8, 3);
+        singlyLinkedListOperations.insertInLinkedList(9, 4);
+        singlyLinkedListOperations.insertInLinkedList(10, 5);
+        singlyLinkedListOperations.insertInLinkedList(11, 0);
+        System.out.println(singlyLinkedListOperations.head.value);
+        System.out.println(singlyLinkedListOperations.head.next.value);
+        System.out.println(singlyLinkedListOperations.head.next.next.value);
+        singlyLinkedListOperations.traverseSinglyLinkedList();
+        singlyLinkedListOperations.searchNode(7);
     }
     public Node createSinglyLinkedList(int nodeValue) {
-        new InsertingNodes();
         Node node = new Node();
         node.next = null;
         node.value = nodeValue;
