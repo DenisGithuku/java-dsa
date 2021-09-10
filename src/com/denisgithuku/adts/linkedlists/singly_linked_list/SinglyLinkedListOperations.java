@@ -1,5 +1,7 @@
 package com.denisgithuku.adts.linkedlists.singly_linked_list;
 
+import com.denisgithuku.adts.linkedlists.Node;
+
 public class SinglyLinkedListOperations {
     public Node head;
     public Node tail;
