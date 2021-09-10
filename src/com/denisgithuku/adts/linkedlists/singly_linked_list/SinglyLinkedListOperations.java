@@ -1,4 +1,4 @@
-package com.denisgithuku.adts.linkedlists.basics;
+package com.denisgithuku.adts.linkedlists.singly_linked_list;
 
 public class SinglyLinkedListOperations {
     public Node head;
