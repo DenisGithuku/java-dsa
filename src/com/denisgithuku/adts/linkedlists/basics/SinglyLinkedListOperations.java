@@ -21,6 +21,8 @@ public class SinglyLinkedListOperations {
         singlyLinkedListOperations.traverseSinglyLinkedList();
         singlyLinkedListOperations.searchNode(7);
         singlyLinkedListOperations.deleteNode (3);
+//        singlyLinkedListOperations.traverseSinglyLinkedList();
+        singlyLinkedListOperations.deleteSinglyLinkedList();
         singlyLinkedListOperations.traverseSinglyLinkedList();
     }
     public Node createSinglyLinkedList(int nodeValue) {
@@ -127,5 +129,11 @@ public class SinglyLinkedListOperations {
             }
             tempNode.next = tempNode.next.next;
         }
+    }
+    
+    public void deleteSinglyLinkedList() {
+        head = null;
+        tail = null;
+        System.out.println("Singly linked list deleted");
     }
 }
