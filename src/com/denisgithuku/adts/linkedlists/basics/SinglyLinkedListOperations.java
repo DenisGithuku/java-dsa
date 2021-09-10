@@ -20,6 +20,8 @@ public class SinglyLinkedListOperations {
         System.out.println(singlyLinkedListOperations.head.next.next.value);
         singlyLinkedListOperations.traverseSinglyLinkedList();
         singlyLinkedListOperations.searchNode(7);
+        singlyLinkedListOperations.deleteNode (3);
+        singlyLinkedListOperations.traverseSinglyLinkedList();
     }
     public Node createSinglyLinkedList(int nodeValue) {
         Node node = new Node();
@@ -65,11 +67,12 @@ public class SinglyLinkedListOperations {
     public void traverseSinglyLinkedList() {
         if (head == null) {
             System.out.println("The single linked list does not exit");
+            return;
         } else {
             Node tempNode = head;
             for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.value);
-                if (i != size -1) {
+                if (i != size - 1) {
                     System.out.print("->");
                 }
                 tempNode = tempNode.next;
@@ -93,5 +96,36 @@ public class SinglyLinkedListOperations {
         }
         System.out.println("Node not found");
         return false;
+    }
+    
+    //deleting from a single linked list
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println ("Linked list empty!!");
+        } else if (location == 0) {
+            head = head.next;  //more than one node
+            size--;
+            if (size == 0) { //only one node
+                tail = null;
+            }
+        } else if (location >= size) {
+            Node tempNode = head;
+            for (int i = 0; i < size - 1; i++) {
+                tempNode = tempNode.next;
+            }
+           if (tempNode == head) { //node at the head. Only one node
+               tail = head = null;
+               size--;
+           }
+           tempNode.next = null;
+           tail = tempNode;
+           size--;
+        } else {
+            Node tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next;
+        }
     }
 }
