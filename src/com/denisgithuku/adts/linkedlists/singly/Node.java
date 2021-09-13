@@ -1,4 +1,4 @@
-package com.denisgithuku.adts.linkedlists;
+package com.denisgithuku.adts.linkedlists.singly;
 
 public class Node {
     public int value;
