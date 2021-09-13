@@ -46,8 +46,7 @@ public class SinglyLinkedListOperations {
         if (head == null) {
             createSinglyLinkedList(nodeValue);
             return;
-            //insert at the head
-        } else if (nodeLocation == 0) {
+        } else if (nodeLocation == 0) { //insert at the head
             node.next = head;
             head = node;
         } else if (nodeLocation >= size) {
