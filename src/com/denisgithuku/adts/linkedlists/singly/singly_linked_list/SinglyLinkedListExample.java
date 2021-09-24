@@ -1,17 +1,13 @@
-package com.denisgithuku.adts.linkedlists.basics;
+package com.denisgithuku.adts.linkedlists.singly.singly_linked_list;
+
+import com.denisgithuku.adts.linkedlists.Node;
 
 public class SinglyLinkedListExample {
 
     public Node head;
     public Node tail;
     public int size;
-
-    public class Node {
-        public int value;
-        public Node next; //hold ref to the next item in series
-    }
-
-
+    
     public static void main(String[] args) {
         SinglyLinkedListExample sll = new SinglyLinkedListExample();
         sll.createSinglyLinkedList(5);
