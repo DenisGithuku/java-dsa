@@ -23,6 +23,8 @@ public class CircularDoublyLinkedList {
         cDll.forwardTraversalCircularDll();
         cDll.deleteNode(0);
         cDll.forwardTraversalCircularDll();
+        cDll.deleteCircularDll();
+        cDll.forwardTraversalCircularDll();
     }
     
     //creation of a circular linked list
@@ -152,5 +154,15 @@ public class CircularDoublyLinkedList {
             tempNode.next.prev = tempNode; //reverse link between the node that comes after the current node and the next node
             size--;
         }
+    }
+    
+    public void deleteCircularDll() {
+        DoubleNode tempNode = head;
+        for (int i = 0; i < size; i++) {
+            tempNode.prev = null;
+            tempNode = tempNode.next;
+        }
+        head = tail = null;
+        System.out.println("Circular doubly linked list deleted");
     }
 }
