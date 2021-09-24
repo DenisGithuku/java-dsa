@@ -17,6 +17,8 @@ public class CircularDoublyLinkedList {
         cDll.forwardTraversalCircularDll();
         System.out.println();
         cDll.backwardTraversalCircularDll();
+        cDll.searchNode(7);
+        cDll.searchNode(3);
     }
     
     //creation of a circular linked list
@@ -90,8 +92,25 @@ public class CircularDoublyLinkedList {
                 }
                 tempNode = tempNode.prev; //traversing in reversal
             }
+            System.out.println();
         } else {
             System.out.println("Doubly circular linked list doesn't exist");
         }
     }
+    
+    //searching of a given node
+    public boolean searchNode(int targetNode) {
+        if (head != null) {
+            DoubleNode tempNode = head;
+            for (int i = 0; i < size; i++) {
+                if (tempNode.value == targetNode) {
+                    System.out.println("Node " + targetNode + " found at location: " + i);
+                    return true;
+                }
+                tempNode = tempNode.next;
+            }
+        }
+            System.out.println("Node " + targetNode +  " not found in list");
+            return false;
+        }
 }
