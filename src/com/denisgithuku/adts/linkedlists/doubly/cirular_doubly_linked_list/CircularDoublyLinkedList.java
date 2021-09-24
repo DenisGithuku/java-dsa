@@ -10,10 +10,12 @@ public class CircularDoublyLinkedList {
         cDll.createCircularDll(10);
         System.out.println(cDll.head.value);
         cDll.insertNodeIntoCircularDll(5, 0);
-        cDll.insertNodeIntoCircularDll(6, 1);
-        cDll.insertNodeIntoCircularDll(7, 3);
-        cDll.insertNodeIntoCircularDll(8, 9);
-        System.out.println(cDll.head.value);
+        cDll.insertNodeIntoCircularDll(6, 2);
+        cDll.insertNodeIntoCircularDll(7, 5);
+        cDll.insertNodeIntoCircularDll(9, 4);
+//        System.out.println(cDll.head.value);
+        cDll.traverseCircularDll();
+        System.out.println(cDll.tail.value);
     }
     
     //creation of a circular linked list
@@ -57,5 +59,22 @@ public class CircularDoublyLinkedList {
             node.next.prev = node;
         }
         size++;
+    }
+    
+    
+    //forward traversal
+    public void traverseCircularDll() {
+        if (head != null) {
+            DoubleNode tempNode = head;
+            for (int i = 0; i < size; i++) {
+                System.out.print(tempNode.value);
+                if (i != size - 1) {
+                    System.out.print(" -> ");
+                }
+                tempNode = tempNode.next;
+            }
+        } else {
+            System.out.println("Circular doubly linked list doesn't exist");
+        }
     }
 }
