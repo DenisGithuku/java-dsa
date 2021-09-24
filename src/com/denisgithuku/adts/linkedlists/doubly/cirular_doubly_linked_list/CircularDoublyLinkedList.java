@@ -1,6 +1,7 @@
 package com.denisgithuku.adts.linkedlists.doubly.cirular_doubly_linked_list;
 
 import com.denisgithuku.adts.linkedlists.doubly.DoubleNode;
+
 public class CircularDoublyLinkedList {
     public DoubleNode head, tail;
     public int size;
@@ -12,13 +13,16 @@ public class CircularDoublyLinkedList {
         cDll.insertNodeIntoCircularDll(5, 0);
         cDll.insertNodeIntoCircularDll(6, 2);
         cDll.insertNodeIntoCircularDll(7, 5);
-        cDll.insertNodeIntoCircularDll(9, 4);
+//        cDll.insertNodeIntoCircularDll(12, 3);
+//        cDll.insertNodeIntoCircularDll(14, 4);
 //        System.out.println(cDll.head.value);
         cDll.forwardTraversalCircularDll();
-        System.out.println();
         cDll.backwardTraversalCircularDll();
         cDll.searchNode(7);
         cDll.searchNode(3);
+        cDll.forwardTraversalCircularDll();
+        cDll.deleteNode(0);
+        cDll.forwardTraversalCircularDll();
     }
     
     //creation of a circular linked list
@@ -79,6 +83,7 @@ public class CircularDoublyLinkedList {
         } else {
             System.out.println("Circular doubly linked list doesn't exist");
         }
+        System.out.println();
     }
     
     //backward traversal
@@ -110,7 +115,42 @@ public class CircularDoublyLinkedList {
                 tempNode = tempNode.next;
             }
         }
-            System.out.println("Node " + targetNode +  " not found in list");
-            return false;
+        System.out.println("Node " + targetNode + " not found in list");
+        return false;
+    }
+    
+    //deletion from circular linked list
+    public void deleteNode(int location) {
+        if (head == null) {
+            System.out.println("Circular doubly linked list doesn't contain any node");
+        } else if (location == 0) {
+            if (size == 1) {
+                head.next = head.prev = null;
+                head = tail = null;
+            } else {
+                head = head.next;
+                head.prev = tail;
+                tail.next = head;
+            }
+            size--;
+        } else if (location >= size) {
+            if (size == 1) {
+                head.next = head.prev = null;
+                head = tail = null;
+            } else {
+                tail = tail.prev;
+                tail.next = head;
+                head.prev = tail;
+            }
+            size--;
+        } else {
+            DoubleNode tempNode = head;
+            for (int i = 0; i < location - 1; i++) {
+                tempNode = tempNode.next;
+            }
+            tempNode.next = tempNode.next.next; //node that comes after the next node
+            tempNode.next.prev = tempNode; //reverse link between the node that comes after the current node and the next node
+            size--;
         }
+    }
 }
