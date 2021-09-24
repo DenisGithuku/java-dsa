@@ -14,8 +14,9 @@ public class CircularDoublyLinkedList {
         cDll.insertNodeIntoCircularDll(7, 5);
         cDll.insertNodeIntoCircularDll(9, 4);
 //        System.out.println(cDll.head.value);
-        cDll.traverseCircularDll();
-        System.out.println(cDll.tail.value);
+        cDll.forwardTraversalCircularDll();
+        System.out.println();
+        cDll.backwardTraversalCircularDll();
     }
     
     //creation of a circular linked list
@@ -43,8 +44,8 @@ public class CircularDoublyLinkedList {
         } else if (location >= size) {
             node.next = head;
             node.prev = tail;
-            tail.next = node;
             head.prev = node;
+            tail.next = node;
             tail = node;
         } else {
             DoubleNode tempNode = head;
@@ -63,7 +64,7 @@ public class CircularDoublyLinkedList {
     
     
     //forward traversal
-    public void traverseCircularDll() {
+    public void forwardTraversalCircularDll() {
         if (head != null) {
             DoubleNode tempNode = head;
             for (int i = 0; i < size; i++) {
@@ -71,10 +72,26 @@ public class CircularDoublyLinkedList {
                 if (i != size - 1) {
                     System.out.print(" -> ");
                 }
-                tempNode = tempNode.next;
+                tempNode = tempNode.next; //traversal to the next node
             }
         } else {
             System.out.println("Circular doubly linked list doesn't exist");
+        }
+    }
+    
+    //backward traversal
+    public void backwardTraversalCircularDll() {
+        if (head != null) {
+            DoubleNode tempNode = tail;
+            for (int i = 0; i < size; i++) {
+                System.out.print(tempNode.value);
+                if (i != size - 1) {
+                    System.out.print(" -> ");
+                }
+                tempNode = tempNode.prev; //traversing in reversal
+            }
+        } else {
+            System.out.println("Doubly circular linked list doesn't exist");
         }
     }
 }
