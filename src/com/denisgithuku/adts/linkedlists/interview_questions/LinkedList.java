@@ -19,6 +19,9 @@ public class LinkedList {
         linkedList.traversalLL();
         Node n = linkedList.NthToLast(linkedList, 3);
         System.out.println(n.value);
+        linkedList.traversalLL();
+        LinkedList ll = linkedList.partition(linkedList, 12);
+        ll.traversalLL();
     }
     
     public void createLL(int nodeValue) {
@@ -68,6 +71,24 @@ public class LinkedList {
             p2 = p2.next;
         }
         return p1;
+    }
+    
+    //Question4 - Partition
+    LinkedList partition(LinkedList linkedList, int x){
+        Node currentNode = linkedList.head;
+        linkedList.tail = linkedList.head;
+        while (currentNode != null) {
+            Node next = currentNode.next;
+            if (currentNode.value < x) {
+                currentNode.next = linkedList.head;
+                linkedList.head = currentNode;
+            } else {
+                linkedList.tail = currentNode;
+            }
+            currentNode = next;
+        }
+        linkedList.tail.next = null;
+        return linkedList;
     }
     
 }
