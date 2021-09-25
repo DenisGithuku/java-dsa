@@ -2,9 +2,9 @@ package com.denisgithuku.adts.linkedlists.interview_questions;
 
 import java.util.HashSet;
 
-public class RemoveDups {
+public class Question {
     public static void main(String[] args) {
-        RemoveDups removeDups = new RemoveDups();
+        Question question = new Question();
     }
     
     void deleteNode(LinkedList linkedList) {

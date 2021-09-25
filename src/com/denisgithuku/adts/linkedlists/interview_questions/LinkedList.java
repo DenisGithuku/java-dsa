@@ -14,9 +14,11 @@ public class LinkedList {
         linkedList.insertNode(10);
         linkedList.insertNode(4);
         linkedList.traversalLL();
-        RemoveDups removeDups = new RemoveDups();
-        removeDups.deleteNode(linkedList);
+        Question question = new Question();
+        question.deleteNode(linkedList);
         linkedList.traversalLL();
+        Node n = linkedList.NthToLast(linkedList, 3);
+        System.out.println(n.value);
     }
     
     public void createLL(int nodeValue) {
@@ -53,5 +55,19 @@ public class LinkedList {
         System.out.println("\n");
     }
     
+    //Question 2: Nth to last
+    public Node NthToLast(LinkedList linkedList,int n) {
+        Node p1 = linkedList.head;
+        Node p2 = linkedList.head;
+        for (int i = 0; i < n; i++) {
+            if (p2 == null) return null;
+            p2 = p2.next;
+        }
+        while (p2 != null) {
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return p1;
+    }
     
 }
