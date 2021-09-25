@@ -22,6 +22,19 @@ public class LinkedList {
         linkedList.traversalLL();
         LinkedList ll = linkedList.partition(linkedList, 12);
         ll.traversalLL();
+        
+        LinkedList linkedListA = new LinkedList();
+        linkedListA.insertNode(7);
+        linkedListA.insertNode(1);
+        linkedListA.insertNode(6);
+        
+        LinkedList linkedListB = new LinkedList();
+        linkedListB.insertNode(5);
+        linkedListB.insertNode(9);
+        linkedListB.insertNode(2);
+        
+        LinkedList result = linkedList.sumList(linkedListA, linkedListB);
+        result.traversalLL();
     }
     
     public void createLL(int nodeValue) {
@@ -73,7 +86,7 @@ public class LinkedList {
         return p1;
     }
     
-    //Question4 - Partition
+    //Question 4 - Partition
     LinkedList partition(LinkedList linkedList, int x){
         Node currentNode = linkedList.head;
         linkedList.tail = linkedList.head;
@@ -89,6 +102,28 @@ public class LinkedList {
         }
         linkedList.tail.next = null;
         return linkedList;
+    }
+    
+    //Question 5 - sum list
+    LinkedList sumList(LinkedList A, LinkedList B) {
+        Node node1 = A.head;
+        Node node2 = B.head;
+        int carry = 0; //carries the excess value over
+        LinkedList resultList = new LinkedList();
+        while (node1 != null || node2 != null) {
+            int result = carry;
+            if (node1 != null) {
+                result += node1.value;
+                node1 = node1.next;
+            }
+            if (node2 != null) {
+                result += node2.value;
+                node2 = node2.next;
+            }
+            resultList.insertNode(result % 10);
+            carry = result / 10;
+        }
+        return resultList;
     }
     
 }
