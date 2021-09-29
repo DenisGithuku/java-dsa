@@ -35,6 +35,24 @@ public class LinkedList {
         
         LinkedList result = linkedList.sumList(linkedListA, linkedListB);
         result.traversalLL();
+        
+        LinkedList llA = new LinkedList();
+        llA.insertNode(3);
+        llA.insertNode(1);
+        llA.insertNode(5);
+        llA.insertNode(9);
+        
+        LinkedList llB = new LinkedList();
+        llB.insertNode(2);
+        llB.insertNode(4);
+        llB.insertNode(6);
+        
+        linkedList.addSameNode(llA, llB, 7);
+        linkedList.addSameNode(llA, llB, 2);
+        linkedList.addSameNode(llA, llB, 1);
+        Node intersection = linkedList.findIntersection(llA, llB);
+        System.out.println(intersection.value);
+        
     }
     
     public void createLL(int nodeValue) {
@@ -126,4 +144,45 @@ public class LinkedList {
         return resultList;
     }
     
+    //Question 6 - linked list intersection
+    //helper method getKthNode
+    Node getKthNode(Node head, int k) {
+        Node currentNode = head;
+        while (k > 0 && currentNode != null) {
+            currentNode = currentNode.next;
+            k--;
+        }
+        return currentNode;
+    }
+    
+    //intersectionMethod
+    Node findIntersection(LinkedList listA, LinkedList listB) {
+        if (listA.head == null || listB.head == null) return null;
+        if (listA.tail != listA.tail) return null;
+        Node shorter = new Node();
+        Node longer = new Node();
+        if (listA.size > listB.size) {
+            longer = listA.head;
+            shorter = listB.head;
+        } else {
+            shorter = listA.head;
+            longer = listB.head;
+        }
+        longer = getKthNode(longer, Math.abs(listA.size - listB.size));
+        while (shorter != longer) {
+            shorter = shorter.next;
+            longer = longer.next;
+        }
+        return longer;
+    }
+    
+    //add same node
+    void addSameNode(LinkedList listA, LinkedList listB, int nodeValue) {
+        Node newNode = new Node();
+        newNode.value = nodeValue;
+        listA.tail.next = newNode;
+        listA.tail = newNode;
+        listB.tail.next = newNode;
+        listB.tail = newNode;
+    }
 }
