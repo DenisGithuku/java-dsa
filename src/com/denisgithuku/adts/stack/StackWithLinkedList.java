@@ -16,6 +16,11 @@ public class StackWithLinkedList {
         stackWithLinkedList.push(4);
         int result = stackWithLinkedList.pop();
         System.out.println(result);
+        int result2 = stackWithLinkedList.pop();
+        System.out.println(result2);
+        System.out.println(stackWithLinkedList.peek());
+        stackWithLinkedList.deleteStack();
+        System.out.println(stackWithLinkedList.isEmpty());
     }
     
     //push
@@ -39,5 +44,21 @@ public class StackWithLinkedList {
             System.out.println("The stack is empty");
         }
         return result;
+    }
+    
+    //peek
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1;
+        } else {
+            return linkedList.head.value;
+        }
+    }
+    
+    //delete
+    public void deleteStack() {
+        linkedList.head = null;
+        System.out.println("Stack is deleted");
     }
 }
