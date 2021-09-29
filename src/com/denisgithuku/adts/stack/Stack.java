@@ -16,6 +16,8 @@ public class Stack {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.peek());
+        stack.delete();
+        System.out.println(stack.peek());
     }
     
     public Stack(int size) {
@@ -64,5 +66,11 @@ public class Stack {
         } else {
             return topStack;
         }
+    }
+    
+    //delete
+    public void delete() {
+        arr = null;
+        System.out.println("Stack deleted successfully");
     }
 }
