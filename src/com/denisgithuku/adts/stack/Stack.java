@@ -12,7 +12,10 @@ public class Stack {
         stack.push(5);
         stack.push(7);
         stack.push(9);
-        stack.push(12); //
+        stack.push(12); //will return stack is full
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
     }
     
     public Stack(int size) {
@@ -39,6 +42,27 @@ public class Stack {
             System.out.println("Value inserted successfully");
         } else {
             System.out.println("Stack is already full");
+        }
+    }
+    
+    public int pop() {
+        int topStack = arr[topOfStack];
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+        } else {
+            topOfStack--;
+        }
+        return topStack;
+    }
+    
+    //peek
+    public int peek() {
+        int topStack = arr[topOfStack];
+        if (isEmpty()) {
+            System.out.println("Stack is empty");
+            return -1;
+        } else {
+            return topStack;
         }
     }
 }
