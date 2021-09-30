@@ -16,14 +16,19 @@ public class QueueArray {
         QueueArray array = new QueueArray(6);
         System.out.println(array.isFull());
         System.out.println(array.isEmpty());
-        array.enqueue(1);
-        array.enqueue(2);
-        array.enqueue(3);
-        array.enqueue(4);
-        array.enqueue(5);
-        array.enqueue(6);
-        array.enqueue(7);
+        array.enqueue(10);
+        array.enqueue(20);
+        array.enqueue(30);
+        array.enqueue(40);
+        array.enqueue(50);
+        array.enqueue(60);
+        array.enqueue(70);
         System.out.println(array.dequeue());
+        System.out.println(array.dequeue());
+        array.traverse();
+        System.out.println(array.beginningOfQueue);
+        System.out.println(array.peek());
+        array.delete();
     }
     
     //isFull
@@ -59,11 +64,38 @@ public class QueueArray {
             return -1;
         } else {
             int result = arr[beginningOfQueue];
+            arr[beginningOfQueue] = Integer.MIN_VALUE;
             beginningOfQueue++;
             if (beginningOfQueue > topOfQueue){
                 beginningOfQueue = topOfQueue = -1;
             }
             return result;
         }
+    }
+    
+    //traverse
+    public void traverse() {
+        for (int j = 0; j < arr.length; j++) {
+            System.out.print(arr[j]);
+            if (j != (arr.length - 1)) {
+                System.out.print(" -> ");
+            }
+        }
+        System.out.println();
+    }
+    
+    //peek
+    public int peek() {
+        if (!isEmpty()) {
+            return arr[beginningOfQueue];
+        }else {
+            return -1;
+        }
+    }
+    
+    //delete
+    public void delete() {
+        arr = null;
+        System.out.println("Queue successfully deleted");
     }
 }
