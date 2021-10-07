@@ -1,29 +1,29 @@
 package com.denisgithuku.adts.stack;
 
-public class Stack {
+public class StackWithArray {
     int[] arr;
     int topOfStack;
     
     public static void main(String[] args) {
-        Stack stack = new Stack(4);
-        System.out.println(stack.isEmpty());
-        System.out.println(stack.isFull());
-        stack.push(3);
-        stack.push(5);
-        stack.push(7);
-        stack.push(9);
-        stack.push(12); //will return stack is full
-        System.out.println(stack.pop());
-        System.out.println(stack.pop());
-        System.out.println(stack.peek());
-        stack.delete();
-        System.out.println(stack.peek());
+        StackWithArray stackWithArray = new StackWithArray(4);
+        System.out.println(stackWithArray.isEmpty());
+        System.out.println(stackWithArray.isFull());
+        stackWithArray.push(3);
+        stackWithArray.push(5);
+        stackWithArray.push(7);
+        stackWithArray.push(9);
+        stackWithArray.push(12); //will return stackWithArray is full
+        System.out.println(stackWithArray.pop());
+        System.out.println(stackWithArray.pop());
+        System.out.println(stackWithArray.peek());
+        stackWithArray.delete();
+        System.out.println(stackWithArray.peek());
     }
     
-    public Stack(int size) {
+    public StackWithArray(int size) {
         this.arr = new int[size];
         this.topOfStack = -1;
-        System.out.println("Stack created with size of: " + size);
+        System.out.println("StackWithArray created with size of: " + size);
     }
     
     //isEmpty
@@ -43,14 +43,14 @@ public class Stack {
             topOfStack++;
             System.out.println("Value inserted successfully");
         } else {
-            System.out.println("Stack is already full");
+            System.out.println("StackWithArray is already full");
         }
     }
     
     public int pop() {
         int topStack = arr[topOfStack];
         if (isEmpty()) {
-            System.out.println("Stack is empty");
+            System.out.println("StackWithArray is empty");
         } else {
             topOfStack--;
         }
@@ -61,7 +61,7 @@ public class Stack {
     public int peek() {
         int topStack = arr[topOfStack];
         if (isEmpty()) {
-            System.out.println("Stack is empty");
+            System.out.println("StackWithArray is empty");
             return -1;
         } else {
             return topStack;
@@ -71,6 +71,6 @@ public class Stack {
     //delete
     public void delete() {
         arr = null;
-        System.out.println("Stack deleted successfully");
+        System.out.println("StackWithArray deleted successfully");
     }
 }
