@@ -1,4 +1,4 @@
-package com.denisgithuku.adts.linkedlists.singly.circular_linked_list;
+package com.denisgithuku.adts.linkedlists.singly.circular_singly_linked_list;
 
 import com.denisgithuku.adts.linkedlists.singly.Node;
 

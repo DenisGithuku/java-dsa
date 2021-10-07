@@ -1,11 +1,9 @@
 package com.denisgithuku.adts.linkedlists.singly.singly_linked_list;
 
-import com.denisgithuku.adts.linkedlists.Node;
-
 public class SinglyLinkedListExample {
 
-    public Node head;
-    public Node tail;
+    public com.denisgithuku.adts.linkedlists.singly.Node head;
+    public com.denisgithuku.adts.linkedlists.singly.Node tail;
     public int size;
     
     public static void main(String[] args) {
@@ -15,9 +13,9 @@ public class SinglyLinkedListExample {
 
     }
 
-    public Node createSinglyLinkedList(int nodeValue) {
-        new Node();
-        Node node = new Node();
+    public com.denisgithuku.adts.linkedlists.singly.Node createSinglyLinkedList(int nodeValue) {
+        new com.denisgithuku.adts.linkedlists.singly.Node();
+        com.denisgithuku.adts.linkedlists.singly.Node node = new com.denisgithuku.adts.linkedlists.singly.Node();
         node.next = null;
         node.value = nodeValue;
         head = node;

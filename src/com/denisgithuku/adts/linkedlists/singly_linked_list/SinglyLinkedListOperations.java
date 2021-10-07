@@ -1,10 +1,9 @@
-package com.denisgithuku.adts.linkedlists.singly.singly_linked_list;
 
-import com.denisgithuku.adts.linkedlists.Node;
+package com.denisgithuku.adts.linkedlists.singly_linked_list;
 
 public class SinglyLinkedListOperations {
-    public Node head;
-    public Node tail;
+    public com.denisgithuku.adts.linkedlists.singly.Node head;
+    public com.denisgithuku.adts.linkedlists.singly.Node tail;
     public int size;
 
     public static void main(String[] args) {
@@ -27,8 +26,8 @@ public class SinglyLinkedListOperations {
         singlyLinkedListOperations.deleteSinglyLinkedList();
         singlyLinkedListOperations.traverseSinglyLinkedList();
     }
-    public Node createSinglyLinkedList(int nodeValue) {
-        Node node = new Node();
+    public com.denisgithuku.adts.linkedlists.singly.Node createSinglyLinkedList(int nodeValue) {
+        com.denisgithuku.adts.linkedlists.singly.Node node = new com.denisgithuku.adts.linkedlists.singly.Node();
         node.next = null;
         node.value = nodeValue;
         head = node;
@@ -39,14 +38,15 @@ public class SinglyLinkedListOperations {
 
     public void insertInLinkedList(int nodeValue, int nodeLocation) {
         //create a new node
-        Node node = new Node();
+        com.denisgithuku.adts.linkedlists.singly.Node node = new com.denisgithuku.adts.linkedlists.singly.Node();
         node.value = nodeValue;
 
         //list contains no nodes so start by creating
         if (head == null) {
             createSinglyLinkedList(nodeValue);
             return;
-        } else if (nodeLocation == 0) { //insert at the head
+            //insert at the head
+        } else if (nodeLocation == 0) {
             node.next = head;
             head = node;
         } else if (nodeLocation >= size) {
@@ -54,13 +54,13 @@ public class SinglyLinkedListOperations {
             tail.next = node; //set the next reference of the tail reference to node
             tail = node; //set the node to be the tail
         } else {
-            Node tempNode = head; //temporary node holder to be used in the loop
+            com.denisgithuku.adts.linkedlists.singly.Node tempNode = head; //temporary node holder to be used in the loop
             int index = 0;
             while (index < nodeLocation - 1) { //loop till we reach the specified node
                 tempNode = tempNode.next; //go to the next node everytime
                 index++;
             }
-            Node nextNode = tempNode.next;
+            com.denisgithuku.adts.linkedlists.singly.Node nextNode = tempNode.next;
             tempNode.next = node;
             node.next = nextNode;
         }
@@ -72,7 +72,7 @@ public class SinglyLinkedListOperations {
             System.out.println("The single linked list does not exit");
             return;
         } else {
-            Node tempNode = head;
+            com.denisgithuku.adts.linkedlists.singly.Node tempNode = head;
             for (int i = 0; i < size; i++) {
                 System.out.print(tempNode.value);
                 if (i != size - 1) {
@@ -88,7 +88,7 @@ public class SinglyLinkedListOperations {
     //searching for a node in a linked list
     public boolean searchNode(int nodeValue) {
         if (head != null) {
-            Node tempNode = head;
+            com.denisgithuku.adts.linkedlists.singly.Node tempNode = head;
             for (int i = 0; i < size; i++) {
                 if(tempNode.value == nodeValue) {
                     System.out.print("Found node at: " + i + "\n");
@@ -112,7 +112,7 @@ public class SinglyLinkedListOperations {
                 tail = null;
             }
         } else if (location >= size) {
-            Node tempNode = head;
+            com.denisgithuku.adts.linkedlists.singly.Node tempNode = head;
             for (int i = 0; i < size - 1; i++) {
                 tempNode = tempNode.next;
             }
@@ -124,7 +124,7 @@ public class SinglyLinkedListOperations {
            tail = tempNode;
            size--;
         } else {
-            Node tempNode = head;
+            com.denisgithuku.adts.linkedlists.singly.Node tempNode = head;
             for (int i = 0; i < location - 1; i++) {
                 tempNode = tempNode.next;
             }
