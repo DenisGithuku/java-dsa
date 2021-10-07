@@ -1,8 +1,5 @@
-<<<<<<<< HEAD:src/com/denisgithuku/adts/linkedlists/singly/singly_linked_list/SinglyLinkedListOperations.java
-package com.denisgithuku.adts.linkedlists.singly.singly_linked_list;
-========
+
 package com.denisgithuku.adts.linkedlists.singly_linked_list;
->>>>>>>> 5e62ac38aadeffda3eb9e12a135ab5c467a3642e:src/com/denisgithuku/adts/linkedlists/singly_linked_list/SinglyLinkedListOperations.java
 
 public class SinglyLinkedListOperations {
     public com.denisgithuku.adts.linkedlists.singly.Node head;
