@@ -1,5 +1,8 @@
 package com.denisgithuku.adts.trees.binary_tree.linkedlist;
 
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class BinaryTree {
     public BinaryNode root;
     
@@ -34,6 +37,13 @@ public class BinaryTree {
         N4.right = N9;
         binaryTree.root = N1;
         binaryTree.preOrder(binaryTree.root);
+        System.out.println();
+        binaryTree.inOrder(binaryTree.root);
+        System.out.println();
+        binaryTree.postOrder(binaryTree.root);
+        System.out.println();
+        binaryTree.levelOrder();
+        
     }
     
     //tree creation
@@ -51,4 +61,41 @@ public class BinaryTree {
         preOrder(node.left);
         preOrder(node.right);
     }
+    
+    //inorder traversal
+    public void inOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.print(node.data + " ");
+        inOrder(node.right);
+    }
+    
+    //postorder traversal
+    public void postOrder(BinaryNode node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.data + " ");
+    }
+    
+    //levelOrder traversal
+    public void levelOrder() {
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BinaryNode presentNode = queue.remove();
+            System.out.print(presentNode.data + " ");
+            if (presentNode.left != null) {
+                queue.add(presentNode.left);
+            }
+            if (presentNode.right != null) {
+                queue.add(presentNode.right);
+            }
+        }
+    }
+    
 }
