@@ -43,6 +43,7 @@ public class BinaryTree {
         binaryTree.postOrder(binaryTree.root);
         System.out.println();
         binaryTree.levelOrder();
+        binaryTree.binarySearch("N2");
         
     }
     
@@ -84,7 +85,7 @@ public class BinaryTree {
     
     //levelOrder traversal
     public void levelOrder() {
-        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
             BinaryNode presentNode = queue.remove();
@@ -96,6 +97,27 @@ public class BinaryTree {
                 queue.add(presentNode.right);
             }
         }
+    }
+    
+    //search
+    public void binarySearch(String value) {
+        Queue<BinaryNode> nodeQueue = new LinkedList<>();
+        nodeQueue.add(root);
+        while (!nodeQueue.isEmpty()) {
+            BinaryNode presentNode = nodeQueue.remove();
+            if (presentNode.data.equals(value)) {
+                System.out.println("\nThe value - " + value + " is found in Tree");
+                return;
+            } else {
+                if (presentNode.left != null) {
+                    nodeQueue.add(presentNode.left);
+                }
+                if (presentNode.right != null) {
+                    nodeQueue.add(presentNode.right);
+                }
+            }
+        }
+        System.out.println("The value - " + value + " is not found in Tree");
     }
     
 }
