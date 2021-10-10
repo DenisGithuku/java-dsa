@@ -44,6 +44,8 @@ public class BinaryTree {
         System.out.println();
         binaryTree.levelOrder();
         binaryTree.binarySearch("N2");
+        binaryTree.insertNode("N10");
+        binaryTree.levelOrder();
         
     }
     
@@ -118,6 +120,34 @@ public class BinaryTree {
             }
         }
         System.out.println("The value - " + value + " is not found in Tree");
+    }
+    
+    //insertion
+    public void insertNode(String value) {
+        BinaryNode binaryNode = new BinaryNode();
+        binaryNode.data = value;
+        if (root == null) {
+            root = binaryNode;
+            System.out.println("Inserted root");
+            return;
+        }
+        Queue<BinaryNode> binaryNodeQueue = new LinkedList<>();
+        binaryNodeQueue.add(root);
+        while (!binaryNodeQueue.isEmpty()) {
+            BinaryNode presentNode = binaryNodeQueue.remove();
+            if (presentNode.left == null) {
+                presentNode.left = binaryNode;
+                System.out.println("Successfully inserted node at the left");
+                break;
+            } else if (presentNode.right == null) {
+                presentNode.right = binaryNode;
+                System.out.println("Successfully inserted node at the right");
+                break;
+            } else {
+                binaryNodeQueue.add(presentNode.left);
+                binaryNodeQueue.add(presentNode.right);
+            }
+        }
     }
     
 }
