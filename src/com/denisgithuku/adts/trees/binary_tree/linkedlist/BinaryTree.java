@@ -54,7 +54,10 @@ public class BinaryTree {
         System.out.println();
         binaryTree.deleteNode("N2");
         binaryTree.levelOrder();
-        
+        System.out.println();
+        binaryTree.deleteBinaryTree();
+        System.out.println();
+        binaryTree.levelOrder();
     }
     
     //tree creation
@@ -213,5 +216,11 @@ public class BinaryTree {
             }
         }
         System.out.println("Node doesn't exist in this Binary Tree");
+    }
+    
+    //delete binary tree
+    public void deleteBinaryTree() {
+        root = null;
+        System.out.println("Binary tree successfully deleted");
     }
 }
