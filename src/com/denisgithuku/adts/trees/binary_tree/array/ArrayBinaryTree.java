@@ -58,4 +58,11 @@ public class ArrayBinaryTree {
         postOrder(index * 2 + 1);
         System.out.print(arr[index] + " ");
     }
+    
+    //levelorder
+    public void levelOrder() {
+        for (int i = 1; i <= lastUsedIndex; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
 }

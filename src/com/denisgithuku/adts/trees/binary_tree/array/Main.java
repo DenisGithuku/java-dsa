@@ -15,5 +15,7 @@ public class Main {
         arrayBinaryTree.inOrder(1);
         System.out.println();
         arrayBinaryTree.postOrder(1);
+        System.out.println();
+        arrayBinaryTree.levelOrder();
     }
 }
