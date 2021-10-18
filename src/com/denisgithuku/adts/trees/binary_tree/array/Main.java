@@ -17,5 +17,9 @@ public class Main {
         arrayBinaryTree.postOrder(1);
         System.out.println();
         arrayBinaryTree.levelOrder();
+        System.out.println();
+        arrayBinaryTree.search("N5");
+        arrayBinaryTree.delete("N3");
+        arrayBinaryTree.levelOrder();
     }
 }

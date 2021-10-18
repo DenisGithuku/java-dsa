@@ -65,4 +65,28 @@ public class ArrayBinaryTree {
             System.out.print(arr[i] + " ");
         }
     }
+    
+    //search
+    public int search(String value) {
+        for (int i = 1; i <= lastUsedIndex; i++) {
+            if (arr[i].equals(value)) {
+                System.out.println(value + " exists at location " + i);
+                return i;
+            }
+        }
+        System.out.println("Value doesn't exist in tree");
+        return -1;
+    }
+    
+    //delete
+    public void delete(String value) {
+        int location = search(value);
+        if (location == -1) {
+            return;
+        } else {
+            arr[location] = arr[lastUsedIndex];
+            lastUsedIndex--;
+            System.out.println("Successfully deleted " +  value);
+        }
+    }
 }
