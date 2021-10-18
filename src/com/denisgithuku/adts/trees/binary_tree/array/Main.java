@@ -9,5 +9,11 @@ public class Main {
         arrayBinaryTree.insert("N4");
         arrayBinaryTree.insert("N5");
         arrayBinaryTree.insert("N6");
+        
+        arrayBinaryTree.preOrder(1);
+        System.out.println();
+        arrayBinaryTree.inOrder(1);
+        System.out.println();
+        arrayBinaryTree.postOrder(1);
     }
 }

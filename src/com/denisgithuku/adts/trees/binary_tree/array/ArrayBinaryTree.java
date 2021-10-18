@@ -28,4 +28,34 @@ public class ArrayBinaryTree {
             System.out.println("Binary tree is full");
         }
     }
+    //preorder
+    public void preOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+    
+        System.out.print(arr[index] + " ");
+        preOrder(index * 2);
+        preOrder(index * 2 + 1);
+    }
+    
+    //inorder
+    public void inOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+        inOrder(index * 2);
+        System.out.print(arr[index] + " ");
+        inOrder(index * 2 + 1);
+    }
+    
+    //postorder
+    public void postOrder(int index) {
+        if (index > lastUsedIndex) {
+            return;
+        }
+        postOrder(index * 2);
+        postOrder(index * 2 + 1);
+        System.out.print(arr[index] + " ");
+    }
 }
