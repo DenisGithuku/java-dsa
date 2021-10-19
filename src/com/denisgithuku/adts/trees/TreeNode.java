@@ -6,6 +6,7 @@ public class TreeNode {
     String data;
     ArrayList<TreeNode> children;
     
+    //initialize tree
     public TreeNode(String data) {
         this.data = data;
         this.children = new ArrayList<>();
