@@ -1,6 +1,6 @@
 package com.denisgithuku.adts.queue.queue_linkedlist;
 
-import com.denisgithuku.adts.linkedlists.singly.singly_linked_list.SinglyLinkedListOperations;
+import com.denisgithuku.adts.linkedlists.singly_linked_list.SinglyLinkedListOperations;
 public class QueueWithLinkedList {
     public SinglyLinkedListOperations linkedList;
     
