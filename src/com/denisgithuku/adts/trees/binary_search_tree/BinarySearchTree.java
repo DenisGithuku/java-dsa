@@ -24,6 +24,8 @@ public class BinarySearchTree {
         binarySearchTree.postOrder(binarySearchTree.root);
         System.out.println();
         binarySearchTree.levelOrder();
+        System.out.println();
+        binarySearchTree.search(binarySearchTree.root, 40);
     }
     
     public BinarySearchTree() {
@@ -94,6 +96,21 @@ public class BinarySearchTree {
             if (currentNode.right != null) {
                 queue.add(currentNode.right);
             }
+        }
+    }
+    
+    //search
+    public BinarySearchNode search(BinarySearchNode node, int value) {
+        if (node == null) {
+            System.out.println("Value " + value + " not found in BST");
+            return null;
+        } else if (value == node.value) {
+            System.out.println("Value " + value + " found in BST");
+            return node;
+        } else if (value < node.value) {
+            return search(node.left, value);
+        } else {
+            return search(node.right, value);
         }
     }
 }
