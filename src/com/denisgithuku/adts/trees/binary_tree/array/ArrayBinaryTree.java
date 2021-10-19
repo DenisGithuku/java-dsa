@@ -89,4 +89,14 @@ public class ArrayBinaryTree {
             System.out.println("Successfully deleted " +  value);
         }
     }
+    
+    //delete tree
+    public void deleteTree() {
+        try {
+            this.arr = null;
+            System.out.println("Successfully deleted tree");
+        } catch (Exception e) {
+            System.out.println("An error occurred!");
+        }
+    }
 }

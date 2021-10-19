@@ -21,5 +21,7 @@ public class Main {
         arrayBinaryTree.search("N5");
         arrayBinaryTree.delete("N3");
         arrayBinaryTree.levelOrder();
+        System.out.println();
+        arrayBinaryTree.deleteTree();
     }
 }
